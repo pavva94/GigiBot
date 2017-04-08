@@ -14,30 +14,41 @@ gnappate = [
     'Aaaaaawww!',
 ]
 
+gigi = [
+    'Andiamo al noce?',
+    'Andiamo al centro insieme?',
+    'Chiama il ciccione!',
+    'Omar di merda..'
+]
+
 def minestra():
     return open('minestra.png', 'rb')
 
+@bot.message_handler(commands=['help'])
+def send_welcome(message):
+    bot.reply_to(message, "Secondo te ti dovrei aiutare?")
 
-@bot.message_handler(commands=['start', 'help'])
+
+@bot.message_handler(commands=['start'])
 def send_welcome(message):
     bot.reply_to(message, "Hai voglia di qualcosa?")
 
 
 @bot.message_handler(regexp=re.compile(r'gigi', re.I))
 def ho_fame(message):
-    bot.send_message(message.chat.id, 'Andiamo al centro insieme?')
-    bot.send_photo(message.chat.id, minestra())
+    bot.send_message(message.chat.id, random.choice(gigi))
+    # bot.send_photo(message.chat.id, minestra())
 
 
 @bot.message_handler(regexp=re.compile(r'buono', re.I))
 def buono(message):
-    bot.send_message(message.chat.id, 'Le cose più buone sono quelle diy, con lo zenzero e la carota viola.')
+    bot.send_message(message.chat.id, 'NO')
     bot.send_photo(message.chat.id, minestra())
 
 
 @bot.message_handler(regexp=re.compile(r'dotto', re.I))
 def fallito(message):
-    bot.send_message(message.chat.id, 'insulta dotto')
+    bot.send_message(message.chat.id, 'DottoDimmerda')
 
 
 @bot.message_handler(regexp=re.compile(r'acaso', re.I))
