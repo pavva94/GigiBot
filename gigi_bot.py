@@ -3,7 +3,7 @@ import telebot
 import re
 import random
 
-bot = telebot.TeleBot(token='367324257:AAGaPsh2OQB3QkwFeJ26U_dtfO3aW4z7cGc')
+bot = telebot.TeleBot(token='')
 
 gnappate = [
     'insulta dotto',
