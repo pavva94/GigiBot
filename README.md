@@ -1,1 +1,3 @@
-# MinestraBot
+# GigiBot
+
+Il bot di gigi!
